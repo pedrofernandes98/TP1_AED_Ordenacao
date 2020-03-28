@@ -65,6 +65,25 @@ namespace TP1_Ordenacao
             return vetor;
         }
 
-        
+        public static int[] retornaVetorOrderCrescente(int tamanho)
+        {
+            int[] vetor = retornaVetorDadosComTamanho(tamanho);
+
+            vetor.OrderBy(i => i);//Alterar este método
+
+            return vetor;
+        }
+
+        public static int[] retornaVetorOrderDecrescente(int tamanho)
+        {
+            int[] vetor = retornaVetorDadosComTamanho(tamanho);
+
+            vetor.OrderByDescending(i => i);//Alterar este método
+
+            return vetor;
+        }
+
+
+
     }
 }

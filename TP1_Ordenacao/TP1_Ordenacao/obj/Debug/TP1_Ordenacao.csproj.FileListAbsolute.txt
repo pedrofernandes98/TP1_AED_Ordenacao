@@ -5,3 +5,10 @@ C:\Users\Pedro Fernandes\Desktop\PUC\4° Período\AED_Praticas\TP1\TP1_Ordenacao
 C:\Users\Pedro Fernandes\Desktop\PUC\4° Período\AED_Praticas\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.csproj.CoreCompileInputs.cache
 C:\Users\Pedro Fernandes\Desktop\PUC\4° Período\AED_Praticas\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.exe
 C:\Users\Pedro Fernandes\Desktop\PUC\4° Período\AED_Praticas\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.pdb
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\bin\Debug\TP1_Ordenacao.exe.config
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\bin\Debug\TP1_Ordenacao.exe
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\bin\Debug\TP1_Ordenacao.pdb
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.csprojAssemblyReference.cache
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.csproj.CoreCompileInputs.cache
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.exe
+C:\Users\Pedro Fernandes\Desktop\TPI\TP1\TP1_Ordenacao\TP1_Ordenacao\obj\Debug\TP1_Ordenacao.pdb

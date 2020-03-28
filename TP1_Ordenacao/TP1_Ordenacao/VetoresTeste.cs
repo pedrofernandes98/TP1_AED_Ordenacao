@@ -15,8 +15,8 @@ namespace TP1_Ordenacao
         public VetoresTeste(int tamanho)
         {
             preencheVetorAleatorio(tamanho);
-            //preencheVetorCrescente()
-            //preencheVetorDecrescente()
+            preencheVetorCrescente(tamanho);
+            preencheVetorDecrescente(tamanho);
             //VetorCrescente = new int[tamanho];
             //VetorDescrescente = new int[tamanho];
 
@@ -26,6 +26,16 @@ namespace TP1_Ordenacao
         public void preencheVetorAleatorio(int tamanho)
         {
             VetorAleatorio = Database.retornaVetorDadosComTamanho(tamanho);
+        }
+
+        public void preencheVetorCrescente(int tamanho)
+        {
+            VetorCrescente = Database.retornaVetorOrderCrescente(tamanho);
+        }
+
+        public void preencheVetorDecrescente(int tamanho)
+        {
+            VetorDescrescente = Database.retornaVetorOrderDecrescente(tamanho);
         }
 
         //public int[] preencheVetorDescrescente(int[] vetor)

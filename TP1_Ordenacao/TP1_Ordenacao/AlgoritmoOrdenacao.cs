@@ -10,8 +10,8 @@ namespace TP1_Ordenacao
     {
         public int[] OrdenacaoBolha(int[] vetor)
         {
-            //int[] vetorOrdenado = new int[vetor.Length];
-            int maior = 0;
+            int[] vetOrder = vetor;
+            //int maior = 0;
             int aux;
             bool troca;
 
@@ -20,11 +20,11 @@ namespace TP1_Ordenacao
                 troca = false;
                 for(int j = i + 1; j < vetor.Length; j++)
                 {
-                    if(vetor[i] > vetor[j])
+                    if(vetOrder[i] > vetOrder[j])
                     {
-                        aux = vetor[j];
-                        vetor[j] = vetor[i];
-                        vetor[i] = aux;
+                        aux = vetOrder[j];
+                        vetOrder[j] = vetOrder[i];
+                        vetOrder[i] = aux;
                         troca = true;
                     }
                 }
@@ -37,14 +37,55 @@ namespace TP1_Ordenacao
                 
             }
 
-            return vetor;
+            return vetOrder;
 
         }
 
 
-        //public int[] OrdenacaoInsercao(int[] vetor)
-        //{
+        public int[] OrdenacaoSelecao(int[] vetor)
+        {
+            int posMenor = 0;
+            int[] vetOrder = vetor;
+            
 
-        //}
+            for (int i = 0; i < vetor.Length - 2; i++)
+            {
+                posMenor = i;
+
+                for(int j = i + 2; j < vetor.Length; j++)
+                {
+                    if(vetOrder[j] < vetOrder[posMenor])
+                    {
+                        posMenor = j;
+                    }
+                }
+
+                vetOrder[i] = vetOrder[posMenor];
+            }
+
+            return vetOrder;
+        }
+
+        public int[] OrdenacaoInsercao(int[] vetor)
+        {
+            int[] vetOrder = vetor;
+            int sentinela;
+            int j;            
+            for(int i = 1; i <= vetor.Length - 1; i++)
+            {
+                sentinela = vetOrder[i];
+                j = i - 1;
+                vetOrder[0] = sentinela;
+
+                while(sentinela < vetOrder[j])
+                {
+                    vetOrder[j + 1] = vetOrder[j];
+                    j--;
+                }
+                vetOrder[j + 1] = sentinela;
+            }
+
+            return vetOrder;
+        }
     }
 }

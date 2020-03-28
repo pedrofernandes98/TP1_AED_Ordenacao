@@ -26,6 +26,20 @@ namespace TP1_Ordenacao
                 Console.Write("{0} |", vetorOrdenado[i]);
             }
 
+            vetorOrdenado = teste.OrdenacaoSelecao(vetor);
+            Console.WriteLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0} |", vetorOrdenado[i]);
+            }
+
+            vetorOrdenado = teste.OrdenacaoInsercao(vetor);
+            Console.WriteLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0} |", vetorOrdenado[i]);
+            }
+
 
 
             Console.ReadKey();
