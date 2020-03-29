@@ -26,6 +26,7 @@ namespace TP1_Ordenacao
                 Console.Write("{0} |", vetorOrdenado[i]);
             }
 
+            vetor = Database.retornaVetorDadosComTamanho(10);
             vetorOrdenado = teste.OrdenacaoSelecao(vetor);
             Console.WriteLine();
             for (int i = 0; i < 10; i++)
@@ -33,7 +34,16 @@ namespace TP1_Ordenacao
                 Console.Write("{0} |", vetorOrdenado[i]);
             }
 
+            vetor = Database.retornaVetorDadosComTamanho(10);
             vetorOrdenado = teste.OrdenacaoInsercao(vetor);
+            Console.WriteLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0} |", vetorOrdenado[i]);
+            }
+
+            vetor = Database.retornaVetorDadosComTamanho(10);
+            vetorOrdenado = teste.QuickSort(vetor);
             Console.WriteLine();
             for (int i = 0; i < 10; i++)
             {
