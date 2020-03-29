@@ -71,11 +71,11 @@ namespace TP1_Ordenacao
             int[] vetOrder = vetor;
             int sentinela;
             int j;            
-            for(int i = 1; i <= vetor.Length - 1; i++)
+            for(int i = 2; i <= vetor.Length - 1; i++)
             {
                 sentinela = vetOrder[i];
                 j = i - 1;
-                vetOrder[0] = sentinela;
+                //vetOrder[0] = sentinela;
 
                 while(sentinela < vetOrder[j])
                 {
