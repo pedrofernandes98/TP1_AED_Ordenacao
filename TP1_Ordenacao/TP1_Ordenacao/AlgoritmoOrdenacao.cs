@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TP1_Ordenacao
 {
-    class AlgoritmoOrdenacao
+    static class AlgoritmoOrdenacao
     {
-        public int[] OrdenacaoBolha(int[] vetor)
+        static public int[] OrdenacaoBolha(int[] vetor)
         {
             int[] vetOrder = vetor;
             //int maior = 0;
@@ -42,7 +42,7 @@ namespace TP1_Ordenacao
         }
 
 
-        public int[] OrdenacaoSelecao(int[] vetor)
+        static public int[] OrdenacaoSelecao(int[] vetor)
         {
             int posMenor = 0;
             int[] vetOrder = vetor;
@@ -69,7 +69,7 @@ namespace TP1_Ordenacao
             return vetOrder;
         }
 
-        public int[] OrdenacaoInsercao(int[] vetor)
+        static public int[] OrdenacaoInsercao(int[] vetor)
         {
             int[] vetOrder = vetor;
             int sentinela;
@@ -189,8 +189,98 @@ namespace TP1_Ordenacao
         //        quickSort(vetor, f + 1, fim);
         //    }
         //}
+        static public int[] MergeSort(int[] Aleatorio)
+        {
+            if (Aleatorio.Length <= 1)
+                return Aleatorio;
 
-        public int[] QuickSort(int[] vetor)
+
+            int[] ordenado = new int[Aleatorio.Length];
+            int[] esquerdo;
+            int[] direito;
+
+            int meio = Aleatorio.Length / 2;
+
+            esquerdo = new int[meio];
+
+
+            if (Aleatorio.Length % 2 == 0)
+                direito = new int[meio];
+
+            else
+                direito = new int[meio + 1];
+
+
+            for (int i = 0; i < meio; i++)
+            {
+                esquerdo[i] = Aleatorio[i];
+            }
+
+            int j = 0;
+
+            for (int i = meio; i < Aleatorio.Length; i++)
+            {
+                direito[j] = Aleatorio[i];
+                j++;
+            }
+
+            esquerdo = MergeSort(esquerdo);
+            direito = MergeSort(direito);
+            ordenado = Merge(esquerdo, direito);
+            return ordenado;
+        }
+
+        static private int[] Merge(int[] esquerdo, int[] direito)
+        {
+            int resultjuncao = esquerdo.Length + direito.Length;
+
+            int[] resultfinal = new int[resultjuncao];
+
+            int auxesquerdo = 0, auxdireito = 0, auxResult = 0;
+
+            while (auxesquerdo < esquerdo.Length || auxdireito < direito.Length)
+            {
+                if (auxesquerdo < esquerdo.Length && auxdireito < direito.Length)
+                {
+                    if (esquerdo[auxesquerdo] <= direito[auxdireito])
+                    {
+                        resultfinal[auxResult] = esquerdo[auxesquerdo];
+                        auxesquerdo++;
+                        auxResult++;
+
+                    }
+
+                    else
+                    {
+                        resultfinal[auxResult] = direito[auxdireito];
+                        auxdireito++;
+                        auxResult++;
+                    }
+                }
+
+                else if (auxesquerdo < esquerdo.Length)
+                {
+
+                    resultfinal[auxResult] = esquerdo[auxesquerdo];
+                    auxesquerdo++;
+                    auxResult++;
+
+                }
+
+                else if (auxdireito < direito.Length)
+                {
+                    resultfinal[auxResult] = direito[auxdireito];
+                    auxdireito++;
+                    auxResult++;
+                }
+
+
+            }
+
+            return resultfinal;
+        }
+
+        static public int[] QuickSort(int[] vetor)
         {
             quicksort(vetor, 0, vetor.Length - 1);
 
@@ -198,7 +288,7 @@ namespace TP1_Ordenacao
         }
 
 
-        public void quicksort(int[] vetor, int inicio, int fim)
+        static private void quicksort(int[] vetor, int inicio, int fim)
         {
             int part;
             
@@ -216,7 +306,7 @@ namespace TP1_Ordenacao
             
         }
 
-        public int calculaPart(int[] vetor, int inicio, int fim)
+        static private int calculaPart(int[] vetor, int inicio, int fim)
         {
             int aux;
             int pivo = vetor[fim];
