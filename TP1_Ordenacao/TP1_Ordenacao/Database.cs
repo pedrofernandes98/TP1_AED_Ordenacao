@@ -11,8 +11,18 @@ namespace TP1_Ordenacao
     {
         static private string[,] database;
         static private int[] vetorDados;
+        static private int[] vetorCrescente;
+        static private int[] vetorDecrescente;
 
         public static void lerTxt()
+        {
+            lerTxtAleatorio();
+            lerTxtCrescente();
+            lerTxtDecrescente();
+        }
+
+
+        private static void lerTxtAleatorio()
         {
             
             string path = @"dados_airbnb.txt";
@@ -34,6 +44,42 @@ namespace TP1_Ordenacao
                 }
 
                 
+            }
+
+        }
+
+        private static void lerTxtCrescente()
+        {
+
+            string path = @"DadosCrescente.txt";
+            string[] getlinhas = File.ReadAllLines(path); //Classe estática de um FileStream
+            //string[] headers = getlinhas[0].Split('\t'); //Split pelo caracter de Tabulação
+            
+
+            vetorCrescente = new int[getlinhas.Length - 1];
+            
+
+            for (int i = 1; i < getlinhas.Length; i++)
+            {
+                vetorCrescente[i] = int.Parse(getlinhas[i].Trim());
+            }
+
+        }
+
+        private static void lerTxtDecrescente()
+        {
+
+            string path = @"DadosDecrescente.txt";
+            string[] getlinhas = File.ReadAllLines(path); //Classe estática de um FileStream
+            //string[] headers = getlinhas[0].Split('\t'); //Split pelo caracter de Tabulação
+
+
+            vetorDecrescente = new int[getlinhas.Length - 1];
+
+
+            for (int i = 1; i < getlinhas.Length; i++)
+            {
+                vetorDecrescente[i] = int.Parse(getlinhas[i].Trim());
             }
 
         }
@@ -69,7 +115,14 @@ namespace TP1_Ordenacao
         {
             int[] vetor = retornaVetorDadosComTamanho(tamanho);
 
-            vetor.OrderBy(i => i);//Alterar este método
+            //vetor.OrderBy(i => i);//Alterar este método 
+
+            //Alteradodo -- 30/03/2020 -- Trecho de Código antigo comentado
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                vetor[i] = vetorCrescente[i];
+            }
 
             return vetor;
         }
@@ -78,7 +131,12 @@ namespace TP1_Ordenacao
         {
             int[] vetor = retornaVetorDadosComTamanho(tamanho);
 
-            vetor.OrderByDescending(i => i);//Alterar este método
+            //vetor.OrderByDescending(i => i);//Alterar este método
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                vetor[i] = vetorDecrescente[i];
+            }
 
             return vetor;
         }

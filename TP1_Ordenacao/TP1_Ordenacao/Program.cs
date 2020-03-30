@@ -58,9 +58,9 @@ namespace TP1_Ordenacao
             InicializaPrograma();
             StreamWriter meuArquivo = new StreamWriter(@"analiseVetorAleatorio.csv");
             string linha = "";
-            int[] vetorAleatorio;
+            //int[] vetorAleatorio;
             int[] leituras = new int[5];
-
+            VetoresTeste meuVetor;
             //var watch; 
 
             int N = 2000;
@@ -69,18 +69,43 @@ namespace TP1_Ordenacao
             {
                 linha = "";
                 Resultados MeusResultados = new Resultados();
-                vetorAleatorio = Database.retornaVetorDadosComTamanho(N);
+                //vetorAleatorio = Database.retornaVetorDadosComTamanho(N);
+                meuVetor = new VetoresTeste(N);
 
                 for(int i = 0; i < 5; i++)
                 {
+                    //------------------------------Bolha------------------------
+
                     var watch = System.Diagnostics.Stopwatch.StartNew();
 
-                    AlgoritmoOrdenacao.OrdenacaoBolha(vetorAleatorio);
+                    AlgoritmoOrdenacao.OrdenacaoBolha(meuVetor.VetorAleatorio);
 
                     watch.Stop();
-                    double elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-                    //double elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    //double elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    double elapsedMs = watch.ElapsedTicks / 10000000.0;
                     MeusResultados.tpOrdenacaoBolha[i] = elapsedMs;
+
+                    //CRESCENTE
+
+                    watch = System.Diagnostics.Stopwatch.StartNew();
+
+                    AlgoritmoOrdenacao.OrdenacaoSelecao(meuVetor.VetorCrescente);
+
+                    watch.Stop();
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    MeusResultados.tpOrdenacaoSelecao[i] = elapsedMs;
+
+                    //DECRESCENTE
+
+                    watch = System.Diagnostics.Stopwatch.StartNew();
+
+                    AlgoritmoOrdenacao.OrdenacaoSelecao(meuVetor.VetorDescrescente);
+
+                    watch.Stop();
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    MeusResultados.tpOrdenacaoSelecao[i] = elapsedMs;
 
 
                     //-----------------------------Selecao-----------
@@ -90,8 +115,8 @@ namespace TP1_Ordenacao
                     AlgoritmoOrdenacao.OrdenacaoSelecao(vetorAleatorio);
 
                     watch.Stop();
-                    elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-                    //double elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
                     MeusResultados.tpOrdenacaoSelecao[i] = elapsedMs;
 
                     //-----------------------------Insercao-----------
@@ -101,8 +126,8 @@ namespace TP1_Ordenacao
                     AlgoritmoOrdenacao.OrdenacaoInsercao(vetorAleatorio);
 
                     watch.Stop();
-                    elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-                    //double elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
                     MeusResultados.tpOrdenacaoInsercao[i] = elapsedMs;
 
                     //-----------------------------MergeSort-----------
@@ -112,8 +137,8 @@ namespace TP1_Ordenacao
                     AlgoritmoOrdenacao.MergeSort(vetorAleatorio);
 
                     watch.Stop();
-                    elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-                    //double elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
                     MeusResultados.tpMergeSort[i] = elapsedMs;
 
                     //-----------------------------QuickSort-----------
@@ -123,8 +148,8 @@ namespace TP1_Ordenacao
                     AlgoritmoOrdenacao.QuickSort(vetorAleatorio);
 
                     watch.Stop();
-                    elapsedMs = watch.ElapsedMilliseconds / 1000.0;
-                    //double elapsedMs = watch.ElapsedTicks / 10000000.0;
+                    //elapsedMs = watch.ElapsedMilliseconds / 1000.0;
+                    elapsedMs = watch.ElapsedTicks / 10000000.0;
                     MeusResultados.tpQuickSort[i] = elapsedMs;
 
 
