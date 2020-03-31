@@ -59,7 +59,7 @@ namespace TP1_Ordenacao
             vetorCrescente = new int[getlinhas.Length - 1];
             
 
-            for (int i = 1; i < getlinhas.Length; i++)
+            for (int i = 1; i < getlinhas.Length - 1; i++)
             {
                 vetorCrescente[i] = int.Parse(getlinhas[i].Trim());
             }
@@ -77,7 +77,7 @@ namespace TP1_Ordenacao
             vetorDecrescente = new int[getlinhas.Length - 1];
 
 
-            for (int i = 1; i < getlinhas.Length; i++)
+            for (int i = 1; i < getlinhas.Length - 1; i++)
             {
                 vetorDecrescente[i] = int.Parse(getlinhas[i].Trim());
             }
